@@ -1,6 +1,14 @@
 'use strict';
 
-const { Counter, Gauge, Histogram, Summary, register } = require('prom-client');
+const {
+  Counter,
+  Gauge,
+  Histogram,
+  Summary,
+  register,
+  collectDefaultMetrics,
+} = require('prom-client');
+
 // Symbol
 const _prometheus = Symbol.for('EggApplication#prometheus');
 
@@ -9,10 +17,22 @@ module.exports = {
     if (!this[_prometheus]) {
       const { name, prometheus } = this.config;
       // set default labels
-      register.setDefaultLabels(Object.assign({
-        app: name,
-        pid: process.pid,
-      }, prometheus.defaultLabels));
+      register.setDefaultLabels(
+        Object.assign(
+          {
+            app: name,
+            pid: process.pid,
+            worker: 'app',
+          },
+          prometheus.defaultLabels
+        )
+      );
+
+      // 每 5 秒探测一次
+      const collectInterval = collectDefaultMetrics({
+        timeout: 5000,
+        prefix: prometheus.prefix,
+      });
 
       this[_prometheus] = {
         Counter,
@@ -20,6 +40,7 @@ module.exports = {
         Histogram,
         Summary,
         register,
+        collectInterval,
       };
     }
     return this[_prometheus];

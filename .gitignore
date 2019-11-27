@@ -65,4 +65,8 @@ test/fixtures/apps/**/app/public
 test/fixtures/apps/**/app/proxy
 test/fixtures/apps/**/run
 test/fixtures/apps/**/logs
-test/fixtures/apps/**/app/proxy_class/
+test/fixtures/apps/**/.classpath
+test/fixtures/apps/**/.project
+test/fixtures/apps/**/.settings/
+test/fixtures/apps/**/target
+package-lock.json
