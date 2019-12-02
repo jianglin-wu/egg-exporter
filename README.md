@@ -1,5 +1,5 @@
 # egg-exporter
-
+<!--
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
@@ -18,9 +18,13 @@
 [snyk-image]: https://snyk.io/test/npm/egg-prometheus/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/egg-prometheus
 [download-image]: https://img.shields.io/npm/dm/egg-prometheus.svg?style=flat-square
-[download-url]: https://npmjs.org/package/egg-prometheus
+[download-url]: https://npmjs.org/package/egg-prometheus -->
 
 基于 [egg-prometheus](https://github.com/eggjs/egg-prometheus) 开发，增加更多性能指标，为 egg 提供 [Prometheus](https://prometheus.io) 功能支持。
+
+## 展示
+
+![./screenshots/egg-metrics-v1.png](./screenshots/egg-metrics-v1.png)
 
 ## 安装
 
