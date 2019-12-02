@@ -1,14 +1,19 @@
 # egg-exporter
-<!--
+
 [![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/egg-exporter.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/egg-exporter
+[download-image]: https://img.shields.io/npm/dm/egg-exporter.svg?style=flat-square
+[download-url]: https://npmjs.org/package/egg-exporter
+
+<!--
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![David deps][david-image]][david-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
-[![npm download][download-image]][download-url]
 
-[npm-image]: https://img.shields.io/npm/v/egg-prometheus.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/egg-prometheus
 [travis-image]: https://img.shields.io/travis/eggjs/egg-prometheus.svg?style=flat-square
 [travis-url]: https://travis-ci.org/eggjs/egg-prometheus
 [codecov-image]: https://codecov.io/gh/eggjs/egg-prometheus/branch/master/graph/badge.svg
@@ -17,8 +22,7 @@
 [david-url]: https://david-dm.org/eggjs/egg-prometheus
 [snyk-image]: https://snyk.io/test/npm/egg-prometheus/badge.svg?style=flat-square
 [snyk-url]: https://snyk.io/test/npm/egg-prometheus
-[download-image]: https://img.shields.io/npm/dm/egg-prometheus.svg?style=flat-square
-[download-url]: https://npmjs.org/package/egg-prometheus -->
+-->
 
 基于 [egg-prometheus](https://github.com/eggjs/egg-prometheus) 开发，增加更多性能指标，为 egg 提供 [Prometheus](https://prometheus.io) 功能支持。
 
