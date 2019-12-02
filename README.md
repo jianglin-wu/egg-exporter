@@ -43,7 +43,7 @@ $ npm i egg-exporter --save
 通过 `${app_root}/config/plugin.js` 配置启动 Prometheus 插件:
 
 ```js
-exports.prometheus = {
+exports.exporter = {
   enable: true,
   package: 'egg-exporter',
 };
@@ -52,7 +52,7 @@ exports.prometheus = {
 ### 配置
 
 ```js
-exports.prometheus = {
+exports.exporter = {
   scrapePort: 3000,
   scrapePath: '/metrics',
   prefix: 'egg_',
