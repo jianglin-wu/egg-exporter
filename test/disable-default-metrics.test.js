@@ -24,9 +24,9 @@ describe('test/disable-default-metrics.test.js', () => {
     const res = await urllib.curl('http://127.0.0.1:3000/metrics');
     assert(res && res.status === 200);
     const metricsStr = res.data.toString();
-    console.log(metricsStr);
+    // console.log(metricsStr);
 
-    assert(!metricsStr.includes('TYPE http_response_time_ms summary'));
+    assert(!metricsStr.includes('TYPE egg_http_request_duration_milliseconds histogram'));
   });
 
 });

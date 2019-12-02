@@ -15,7 +15,7 @@ const _prometheus = Symbol.for('EggApplication#prometheus');
 module.exports = {
   get prometheus() {
     if (!this[_prometheus]) {
-      const { name, prometheus } = this.config;
+      const { name, exporter } = this.config;
       // set default labels
       register.setDefaultLabels(
         Object.assign(
@@ -24,15 +24,20 @@ module.exports = {
             pid: process.pid,
             worker: 'app',
           },
-          prometheus.defaultLabels
-        )
+          exporter.defaultLabels,
+        ),
       );
 
-      // 每 5 秒探测一次
-      const collectInterval = collectDefaultMetrics({
-        timeout: 5000,
-        prefix: prometheus.prefix,
-      });
+      let collectInterval = null;
+      if (exporter.enableDefaultMetrics) {
+        // 每 5 秒探测一次
+        collectInterval = collectDefaultMetrics({
+          timeout: 5000,
+          prefix: exporter.prefix,
+        });
+        // 任务执行完毕自动退出，不会因为此定时器而挂起
+        collectInterval.unref();
+      }
 
       this[_prometheus] = {
         Counter,

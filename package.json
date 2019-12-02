@@ -1,10 +1,10 @@
 {
-  "name": "egg-prometheus",
-  "version": "1.4.0",
-  "description": "Prometheus plugin for Egg.js",
+  "name": "egg-exporter",
+  "version": "1.0.0",
+  "description": "Prometheus exporter plugin for Egg.js",
   "main": "app.js",
   "eggPlugin": {
-    "name": "prometheus",
+    "name": "exporter",
     "optionalDependencies": [
       "rpc"
     ]
@@ -27,19 +27,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-prometheus.git"
+    "url": "git+https://github.com/highso-fe/egg-exporter.git"
   },
   "keywords": [
     "egg",
     "prometheus",
     "metrics"
   ],
-  "author": "gxcsoccer <gxcsoccer@126.com>",
+  "author": "psyduck <wjiangl.id@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/highso-fe/egg-exporter/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-prometheus#readme",
+  "homepage": "https://github.com/highso-fe/egg-exporter#readme",
   "engines": {
     "node": ">=8.0.0"
   },
@@ -62,8 +62,10 @@
     "egg-rpc-generator": "^1.3.1",
     "eslint": "^5.16.0",
     "eslint-config-egg": "^7.4.1",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "pedding": "^1.1.0",
+    "prettier": "^1.19.1",
     "urllib": "^2.34.0",
     "webstorm-disable-index": "^1.2.0"
   }

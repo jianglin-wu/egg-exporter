@@ -6,6 +6,7 @@
 package.json
 
 /dist
+/test
 .DS_Store
 *.png
 *.toml

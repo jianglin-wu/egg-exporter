@@ -1,6 +1,6 @@
 'use strict';
 
-exports.prometheus = {
+exports.exporter = {
   scrapePort: 3000,
   scrapePath: '/metrics',
   prefix: 'egg_',
