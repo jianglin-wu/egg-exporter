@@ -16,11 +16,12 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 23,
-  "iteration": 1575269447947,
+  "iteration": 1575366573438,
   "links": [],
   "panels": [
     {
       "cacheTimeout": null,
+      "datasource": "Prometheus",
       "description": "满意值：小于 100ms，容忍值：100ms ~ 250ms。",
       "gridPos": {
         "h": 5,
@@ -85,6 +86,7 @@
       "colorPostfix": false,
       "colorValue": false,
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "datasource": "Prometheus",
       "description": "应用当前机器启动后处理请求总数量",
       "format": "none",
       "gauge": {
@@ -167,6 +169,7 @@
       "colorBackground": false,
       "colorValue": false,
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "datasource": "Prometheus",
       "description": "同一机器节点处理中还未响应的请求总数",
       "format": "none",
       "gauge": {
@@ -250,6 +253,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "同一机器节点平均每分钟请求量",
       "fill": 1,
       "gridPos": {
@@ -344,6 +348,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "",
       "fill": 0,
       "gridPos": {
@@ -437,6 +442,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "500 错误请求占总请求数百分比。",
       "fill": 1,
       "gridPos": {
@@ -526,6 +532,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "进程常驻内存",
       "fill": 1,
       "gridPos": {
@@ -624,6 +631,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "5 分钟内平均响应时间占比",
       "fill": 1,
       "gridPos": {
@@ -773,6 +781,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "V8 管理的，绑定到 JavaScript 的 C++ 对象的内存使用情况",
       "fill": 1,
       "gridPos": {
@@ -862,6 +871,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Prometheus",
       "description": "申请的堆内存，与已使用的堆内存。",
       "fill": 1,
       "gridPos": {
@@ -958,7 +968,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 18,
   "style": "dark",
   "tags": [],
@@ -967,18 +977,18 @@
       {
         "allValue": null,
         "current": {
-          "text": "dev",
-          "value": "dev"
+          "text": "local",
+          "value": "local"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(egg_nodejs_version_info{job=\"swaggerstats\"},stage)",
+        "definition": "label_values(egg_nodejs_version_info{job=\"apm-metrics\"},stage)",
         "hide": 0,
         "includeAll": false,
         "label": "环境",
         "multi": false,
         "name": "stage",
         "options": [],
-        "query": "label_values(egg_nodejs_version_info{job=\"swaggerstats\"},stage)",
+        "query": "label_values(egg_nodejs_version_info{job=\"apm-metrics\"},stage)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -992,18 +1002,18 @@
       {
         "allValue": null,
         "current": {
-          "text": "example",
-          "value": "example"
+          "text": "性能监控系统",
+          "value": "性能监控系统"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(egg_nodejs_version_info{job=\"swaggerstats\",stage=\"$stage\"},app)",
+        "definition": "label_values(egg_nodejs_version_info{job=\"apm-metrics\",stage=\"$stage\"},app)",
         "hide": 0,
         "includeAll": false,
         "label": "服务",
         "multi": false,
         "name": "appname",
         "options": [],
-        "query": "label_values(egg_nodejs_version_info{job=\"swaggerstats\",stage=\"$stage\"},app)",
+        "query": "label_values(egg_nodejs_version_info{job=\"apm-metrics\",stage=\"$stage\"},app)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1021,14 +1031,14 @@
           "value": "ssr.sv-0.hahhub.com:80"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(egg_nodejs_version_info{job=\"swaggerstats\",stage=\"$stage\",app=\"$appname\"},instance)",
+        "definition": "label_values(egg_nodejs_version_info{job=\"apm-metrics\",stage=\"$stage\",app=\"$appname\"},instance)",
         "hide": 0,
         "includeAll": false,
         "label": "主机",
         "multi": false,
         "name": "node",
         "options": [],
-        "query": "label_values(egg_nodejs_version_info{job=\"swaggerstats\",stage=\"$stage\",app=\"$appname\"},instance)",
+        "query": "label_values(egg_nodejs_version_info{job=\"apm-metrics\",stage=\"$stage\",app=\"$appname\"},instance)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1042,8 +1052,8 @@
     ]
   },
   "time": {
-    "from": "2019-11-29T01:52:30.457Z",
-    "to": "2019-11-29T04:44:10.971Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": ["5s", "10s", "30s", "1m", "5m", "15m", "30m", "1h", "2h", "1d"],
@@ -1052,5 +1062,5 @@
   "timezone": "",
   "title": "Egg.js Metrics",
   "uid": "IK1ElAxZk",
-  "version": 127
+  "version": 131
 }
