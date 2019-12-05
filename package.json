@@ -23,11 +23,16 @@
     "lint": "eslint .",
     "ci": "npm run autod -- --check && egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod"
+    "autod": "autod",
+    "release": "semantic-release -b master",
+    "prerelease": "npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/highso-fe/egg-exporter.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "egg",
@@ -52,6 +57,11 @@
     "sdk-base": "^3.6.0"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/github": "^5.5.5",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.5",
     "autod": "^3.1.0",
     "autod-egg": "^1.1.0",
     "await-event": "^2.1.0",
@@ -66,7 +76,30 @@
     "eslint-plugin-prettier": "^3.1.1",
     "pedding": "^1.1.0",
     "prettier": "^1.19.1",
+    "semantic-release": "^15.13.31",
     "urllib": "^2.34.0",
     "webstorm-disable-index": "^1.2.0"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "."
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "chore(🤖): ${nextRelease.version}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
