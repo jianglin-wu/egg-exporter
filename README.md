@@ -26,6 +26,7 @@
 
 基于 [egg-prometheus](https://github.com/eggjs/egg-prometheus) 开发，增加更多性能指标，为 egg 提供 [Prometheus](https://prometheus.io) 功能支持。
 
+
 ## 展示
 
 ![./screenshots/egg-metrics-v1.png](./screenshots/egg-metrics-v1.png)
