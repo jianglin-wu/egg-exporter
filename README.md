@@ -66,6 +66,7 @@ exports.exporter = {
 - `scrapePath`: 监听的采集 metrics 的服务路径
 - `prefix`: 指定 metrics 名称的前缀
 - `defaultLabels`: 默认的 metrics 标签，全局生效
+- `aggregatorPort`: 配置 TCP 进程通信所使用的端口
 
 ## 内置的 Metrics
 
