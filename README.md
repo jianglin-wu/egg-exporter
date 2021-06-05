@@ -25,7 +25,7 @@
 [snyk-url]: https://snyk.io/test/npm/egg-prometheus
 -->
 
-基于 [egg-prometheus](https://github.com/eggjs/egg-prometheus) 开发，增加更多性能指标，为 egg 提供 [Prometheus](https://prometheus.io) 功能支持。了解更多请看 [Egg.js 监控方案](https://hahhub.com/post/2020-05-eggjs-prometheus-monitor/)。
+基于 [egg-prometheus](https://github.com/eggjs/egg-prometheus) 开发，增加更多性能指标，为 egg 提供 [Prometheus](https://prometheus.io) 功能支持。了解更多请看 [Node.js 监控方案](https://hahhub.com/post/2020-05-eggjs-prometheus-monitor/)。
 
 
 ## 展示
